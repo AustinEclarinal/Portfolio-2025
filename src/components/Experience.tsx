@@ -1,12 +1,61 @@
-import { Container, Title, Text, Timeline, ThemeIcon, Card, List } from '@mantine/core';
-import { IconBriefcase, IconUsers } from '@tabler/icons-react';
+import { Carousel } from '@mantine/carousel';
+import { useMediaQuery } from '@mantine/hooks';
+import { Paper, Text, Title, Button, useMantineTheme, rem, Container, Overlay } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { experiences } from '../data/experienceData';
 
-export function Experience() {
+// This is the individual card design
+interface CardProps {
+  image: string;
+  title: string;
+  role: string;
+  date: string;
+}
+
+function Card({ image, title, role, date }: CardProps) {
   return (
-    <Container size="md" py="xl" id="experience" mt={100}>
-      
+    <Paper
+      shadow="md"
+      p="xl"
+      radius="md"
+      style={{
+        backgroundImage: `url(${image})`,
+        height: 440,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'flex-end',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        position: 'relative',
+        overflow: 'hidden'
+      }}
+    >
+      {/* Dark Overlay so text is readable */}
+      <Overlay gradient="linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .85) 90%)" opacity={0.6} zIndex={0} />
+
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Text c="cyan" size="xs" fw={700} tt="uppercase">
+          {date}
+        </Text>
+        <Title order={3} c="white" mt={5}>
+          {role}
+        </Title>
+        <Text c="dimmed" size="sm" mt={5}>
+          {title}
+        </Text>
+      </div>
+    </Paper>
+  );
+}
+
+export function Experience() {
+  const theme = useMantineTheme();
+  // Responsive: 1 slide on mobile, 3 on desktop
+  const mobile = useMediaQuery(`(max-width: ${theme.breakpoints.sm})`);
+
+  return (
+    <Container size="lg" py="xl" mt={100} id="experience">
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -14,58 +63,38 @@ export function Experience() {
         transition={{ duration: 0.5 }}
       >
         <Title order={2} size={40} mb="xs" ta="center">
-          Relevant Experience
+          Leadership in Action
         </Title>
-        <Text c="dimmed" mb={50} ta="center">
-          Leadership roles and professional work history.
+        <Text c="dimmed" mb={50} ta="center" maw={600} mx="auto">
+          Beyond coding, I actively lead student organizations and manage large-scale events.
+          Here are some highlights from my journey.
         </Text>
       </motion.div>
 
-      <Timeline active={experiences.length} bulletSize={34} lineWidth={2}>
-        
-        {experiences.map((item, index) => (
-          <Timeline.Item 
-            key={item.id} 
-            bullet={
-              <ThemeIcon
-                size={32}
-                radius="xl"
-                color={index % 2 === 0 ? "blue" : "cyan"}
-              >
-                 {/* Alternate icons based on index */}
-                {index % 2 === 0 ? <IconUsers size={18} /> : <IconBriefcase size={18} />}
-              </ThemeIcon>
-            }
-            title={
-              <Text size="lg" fw={700} c="white">
-                {item.role}
-              </Text>
-            }
-          >
-            <motion.div
-               initial={{ opacity: 0, x: -20 }}
-               whileInView={{ opacity: 1, x: 0 }}
-               transition={{ duration: 0.5, delay: index * 0.2 }}
-               viewport={{ once: true }}
-            >
-                <Text c="dimmed" size="sm" mb={4}>
-                  {item.title} • {item.date}
-                </Text>
-                
-                <Card withBorder shadow="sm" radius="md" p="md" mt="sm">
-                  <List spacing="xs" size="sm" center icon={
-                    <ThemeIcon color="blue" size={6} radius="xl"><div /></ThemeIcon>
-                  }>
-                    {item.description.map((desc, i) => (
-                      <List.Item key={i}>{desc}</List.Item>
-                    ))}
-                  </List>
-                </Card>
-            </motion.div>
-          </Timeline.Item>
-        ))}
 
-      </Timeline>
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+      >
+        <Carousel
+          slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
+          slideGap="md"
+          //@ts-ignore
+          align='start'
+          slidesToScroll={mobile ? 1 : 2}
+          loop
+          withIndicators
+        >
+          {experiences.map((item) => (
+            <Carousel.Slide key={item.id}>
+              <Card {...item} />
+            </Carousel.Slide>
+          ))}
+        </Carousel>
+      </motion.div>
+
     </Container>
   );
 }
