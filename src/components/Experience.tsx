@@ -1,8 +1,28 @@
 import { Carousel } from '@mantine/carousel';
 import { useMediaQuery } from '@mantine/hooks';
-import { Paper, Text, Title, Button, useMantineTheme, rem, Container, Overlay } from '@mantine/core';
+import { Paper, Text, Title, useMantineTheme, Container, Overlay } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { experiences } from '../data/experienceData';
+
+//Using a function to convert the date string to sortable numbers
+const getDateValue = (dateStr: string) => {
+  // 1. If it says "Present", treat it as the newest possible date (Today)
+  if (dateStr.toLowerCase().includes('present')) {
+    return new Date().getTime();
+  }
+  
+  // 2. For ranged dates only, take the end date
+  const parts = dateStr.split('-');
+  const endDateStr = parts[parts.length - 1].trim(); // Takes the last part
+  
+  // 3. Convert that string into a number (timestamp)
+  return new Date(endDateStr).getTime();
+};
+
+// Sorting the dates: Create a new sorted list (Newest -> Oldest) ---
+const sortedExperiences = [...experiences].sort((a, b) => {
+  return getDateValue(b.date) - getDateValue(a.date);
+});
 
 // This is the individual card design
 interface CardProps {
@@ -30,7 +50,7 @@ function Card({ image, title, role, date }: CardProps) {
         overflow: 'hidden'
       }}
     >
-      {/* Dark Overlay so text is readable */}
+      
       <Overlay gradient="linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .85) 90%)" opacity={0.6} zIndex={0} />
 
       <div style={{ position: 'relative', zIndex: 1 }}>
@@ -78,6 +98,7 @@ export function Experience() {
         viewport={{ once: true }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
+        
         <Carousel
           slideSize={{ base: '100%', sm: '50%', md: '33.333333%' }}
           slideGap="md"
@@ -87,7 +108,8 @@ export function Experience() {
           loop
           withIndicators
         >
-          {experiences.map((item) => (
+         
+          {sortedExperiences.map((item) => (
             <Carousel.Slide key={item.id}>
               <Card {...item} />
             </Carousel.Slide>
