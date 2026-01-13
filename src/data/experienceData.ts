@@ -1,4 +1,11 @@
-// import portfolioImg from '../assets/portfolio.png';enable once pictures can be imported 
+import CCSDays from '../assets/days.jpg';
+import ITcon from '../assets/ITcon.jpg';
+import Techtonic from '../assets/techtonic.jpg';
+import GeneralAssembly from '../assets/G.A..jpg';
+import Pixels from '../assets/Pixels.jpg';
+import Tree from '../assets/Tree of Hope.jpg';
+import IQ from '../assets/IQ.jpg';
+import JPCSGA from '../assets/JPCS.jpg';
 
 export interface Experience {
   id: number;
@@ -13,50 +20,57 @@ export const experiences: Experience[] = [
     id: 1,
     title: "CCS Day 2026",
     role: "CCS-SC Business Manager",
-    date: "January 2026",
-    image: "https://placehold.co/600x800/2f9e44/FFF?text=CCS+Days+2026",
+    date: "Jan 2026",
+    image: CCSDays,
   },
   {
     id: 2,
     title: "CCS General Assembly",
     role: "Chairperson",
     date: "Aug 2025",
-    image: "https://placehold.co/600x800/25262b/FFF?text=General+Assembly", 
+    image: GeneralAssembly, 
   },
   {
     id: 3,
     title: "JPCS General Assembly",
     role: "JPCS President",
     date: "Mar 2025",
-    image: "https://placehold.co/600x800/1971c2/FFF?text=JPCS+General+Assembly",
+    image: JPCSGA,
   },
   {
     id: 4,
     title: "IQ League: Vanguard",
     role: "JPCS President",
     date: "June 2025",
-    image: "https://placehold.co/600x800/e8590c/FFF?text=IQ+League",
+    image: IQ,
   },
   {
     id: 5,
     title: "Tree of Hope 2024: Deck the Dreams",
     role: "JPCS President",
     date: "Dec 2024",
-    image: "https://placehold.co/600x800/2f9e44/FFF?text=Outreach",
+    image: Tree,
   },
   {
     id: 6,
     title: "Enrichment Seminar: Pixels & Patterns",
     role: "CCS-SC Business Manager",
     date: "Sept 2025",
-    image: "https://placehold.co/600x800/2f9e44/FFF?text=Outreach",
+    image: Pixels,
   },
   {
     id: 7,
     title: "Enrichment Seminar: Techtonic Shift",
     role: "CCS-SC Business Manager",
     date: "Oct 2025",
-    image: "https://placehold.co/600x800/2f9e44/FFF?text=Outreach",
+    image: Techtonic,
+  },
+  {
+    id: 8,
+    title: "JPCS ITcon 2026",
+    role: "Capstone Presenter",
+    date: "Jan 2026",
+    image: ITcon,
   },
   
 ];
