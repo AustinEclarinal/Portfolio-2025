@@ -1,6 +1,6 @@
 import { Container, Text, Button, Group, Title, Image, SimpleGrid } from '@mantine/core';
 import { motion } from 'framer-motion';
-import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin, IconBriefcase } from '@tabler/icons-react';
 import me from '../assets/me.jpg';
 
 export function Hero() {
@@ -60,6 +60,17 @@ export function Hero() {
               <Button size="lg" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} component="a" href="#projects">
                 Check out my work
               </Button>
+
+              <Button 
+            size="lg" 
+            variant="outline"    
+            color="cyan"         
+            component="a"        
+            href="#experience"   
+            leftSection={<IconBriefcase size={20} />} 
+          >
+            My Journey
+          </Button>
               <Button
                 component="a"
                 href="https://github.com/AustinEclarinal"
