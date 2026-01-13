@@ -10,35 +10,35 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
-    id: 5,
+    id: 1,
     title: "CCS Day 2026",
     role: "Business Manager",
     date: "January 2026",
     image: "https://placehold.co/600x800/2f9e44/FFF?text=CCS+Days+2026",
   },
   {
-    id: 1,
+    id: 2,
     title: "CCS General Assembly",
     role: "Chairperson",
     date: "Aug 2025",
     image: "https://placehold.co/600x800/25262b/FFF?text=General+Assembly", 
   },
   {
-    id: 2,
+    id: 3,
     title: "JPCS Induction",
     role: "JPCS President",
     date: "Mar 2025",
     image: "https://placehold.co/600x800/1971c2/FFF?text=President",
   },
   {
-    id: 3,
+    id: 4,
     title: "IQ League: Vanguard",
     role: "JPCS President",
     date: "June 2025",
     image: "https://placehold.co/600x800/e8590c/FFF?text=IQ+League",
   },
   {
-    id: 4,
+    id: 5,
     title: "Tree of Hope 2024: Deck the Dreams",
     role: "Organizer",
     date: "Dec 2024",
