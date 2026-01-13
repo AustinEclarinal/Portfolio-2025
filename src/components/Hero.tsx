@@ -46,8 +46,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Text c="dimmed" mt="xl" maw={500} size="lg">
-              I am a 4th-year BSIT major specializing in Game Development seeking a challenging
-              internship where I can utilize my background in team coordination, asset pipeline management, and game logic programming.
+              I am a 4th-year BSIT student specializing in Game Development seeking a challenging
+              internship where I can utilize my background in team coordination, asset pipeline management, and logical programming.
             </Text>
           </motion.div>
 
