@@ -60,7 +60,7 @@ function Card({ image, title, role, date }: CardProps) {
         <Title order={3} c="white" mt={5}>
           {role}
         </Title>
-        <Text c="dimmed" size="sm" mt={5}>
+        <Text c="yellow" size="md" mt={5} style={{ textShadow: '0px 2px 8px rgba(0,0,0,0.9)' }}>
           {title}
         </Text>
       </div>
