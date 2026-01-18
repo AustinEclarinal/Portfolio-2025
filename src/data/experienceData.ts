@@ -18,7 +18,7 @@ export interface Experience {
 export const experiences: Experience[] = [
   {
     id: 1,
-    title: "CCS Day 2026",
+    title: "CCS Days 2026",
     role: "CCS-SC Business Manager",
     date: "Jan 2026",
     image: CCSDays,
