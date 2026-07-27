@@ -1,7 +1,7 @@
 import { Container, Text, Button, Group, Title, Image, SimpleGrid } from '@mantine/core';
 import { motion } from 'framer-motion';
 import { IconBrandGithub, IconBrandLinkedin, IconBriefcase } from '@tabler/icons-react';
-import me from '../assets/another pic of me.jpg';
+import formal from '../assets/Formal.jpg';
 
 export function Hero() {
   return (
@@ -36,7 +36,7 @@ export function Hero() {
               Austin Eclarinal.
             </Title>
             <Title order={2} c="dimmed" size={30} style={{ lineHeight: 1 }} mt="xs">
-              I build immersive experiences.
+              The best investment you will have. 
             </Title>
           </motion.div>
 
@@ -46,8 +46,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.4 }}
           >
             <Text c="dimmed" mt="xl" maw={500} size="lg">
-              I am a 4th-year BSIT student specializing in Game Development seeking a challenging
-              internship where I can utilize my background in team coordination, asset pipeline management, and logical programming.
+              An entry-level Software Developer with a strong foundation in programming, software development principles, organizational management, and a passion for creating innovative solutions. I am eager to make breakthroughs in the industry and contribute to the growth of the company that suits me.
             </Text>
           </motion.div>
 
@@ -102,7 +101,7 @@ export function Hero() {
         >
 
           <Image
-            src={me}
+            src={formal}
             h={400}
             w={400}
             radius="50%"
