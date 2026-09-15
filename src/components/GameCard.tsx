@@ -19,6 +19,7 @@ export function GameCard({ title, description, image, tags, playLink, githubLink
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300 }}
       style={{ height: '100%' }}
+      
     >
       <Card shadow="sm" padding="lg" radius="md" withBorder h="100%" style={{display:'flex', flexDirection:'column'}}>
         
@@ -86,6 +87,9 @@ export function GameCard({ title, description, image, tags, playLink, githubLink
           </Button>
 
         </Stack>
+
+        {/* Adding more projects including 
+        the flutter project I will be working on, and the Laravel project that I will also be working on. */}
       </Card>
     </motion.div>
   );

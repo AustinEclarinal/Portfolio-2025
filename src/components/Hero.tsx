@@ -56,20 +56,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.6 }}
           >
             <Group mt="xl">
-              <Button size="lg" variant="gradient" gradient={{ from: 'blue', to: 'cyan' }} component="a" href="#projects">
-                Check out my work
-              </Button>
-
-              <Button 
-            size="lg" 
-            variant="outline"    
-            color="cyan"         
-            component="a"        
-            href="#experience"   
-            leftSection={<IconBriefcase size={20} />} 
-          >
-            My Journey
-          </Button>
+              
               <Button
                 component="a"
                 href="https://github.com/AustinEclarinal"

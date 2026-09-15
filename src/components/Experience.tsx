@@ -32,7 +32,7 @@ interface CardProps {
   date: string;
 }
 
-function Card({ image, title, role, date }: CardProps) {
+function Card({ image, title, role, date}: CardProps) {
   return (
     <Paper
       shadow="md"
