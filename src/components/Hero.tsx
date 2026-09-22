@@ -1,6 +1,6 @@
 import { Container, Text, Button, Group, Title, Image, SimpleGrid } from '@mantine/core';
 import { motion } from 'framer-motion';
-import { IconBrandGithub, IconBrandLinkedin, IconBriefcase } from '@tabler/icons-react';
+import { IconBrandGithub, IconBrandLinkedin } from '@tabler/icons-react';
 import formal from '../assets/Formal.jpg';
 
 export function Hero() {
