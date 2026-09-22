@@ -29,7 +29,7 @@ export function Navbar() {
         {/* Desktop / Mobile Header */}
         <Group justify="space-between">
           <Text fw={700} size="lg">
-            Aus.dev
+            aus.Dev
           </Text>
 
           {/* Mobile Burger */}
