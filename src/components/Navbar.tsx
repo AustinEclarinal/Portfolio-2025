@@ -51,7 +51,7 @@ export function Navbar() {
             transform: 'translate(-50%, -50%)',
           }}
         >
-          <NavLink href="#about" label="About" style={{ width: 'auto' }} />
+          <NavLink href="About" label="About" style={{ width: 'auto' }} />
           <NavLink href="#projects" label="Projects" style={{ width: 'auto' }} />
           <NavLink href="#experience" label="Experience" style={{ width: 'auto' }} />
           <NavLink href="#contact" label="Contact" style={{ width: 'auto' }} />
@@ -61,7 +61,7 @@ export function Navbar() {
         <Collapse in={opened}>
           <Box mt="md">
             <NavLink
-              href="#Home"
+              href="#About"
               label="About"
               onClick={() => setOpened(false)}
             />

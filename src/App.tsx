@@ -9,7 +9,7 @@ function App() {
     <div>
 <Navbar/>
 
-<section id="Home">
+<section id="About">
       <Hero />
       </section>
 
