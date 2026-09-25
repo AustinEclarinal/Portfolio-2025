@@ -3,6 +3,7 @@ import { Projects} from './components/Projects';
 import { Experience} from './components/Experience';
 import { Navbar} from './components/Navbar';
 import { Container} from '@mantine/core';
+import { Analytics } from '@vercel/analytics/react';
 
 function App() {
   return (
@@ -22,6 +23,8 @@ function App() {
         <Experience/>
         </section>
       </Container>
+
+      <Analytics/>
     </div>
   );
 }

@@ -17,6 +17,7 @@
     "@mantine/core": "^8.3.12",
     "@mantine/hooks": "^8.3.12",
     "@tabler/icons-react": "^3.36.0",
+    "@vercel/analytics": "^2.0.1",
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.26",
     "react": "^19.2.0",
