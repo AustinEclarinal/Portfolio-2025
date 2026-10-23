@@ -2,6 +2,7 @@ import { Hero } from './components/Hero';
 import { Projects} from './components/Projects';
 import { Experience} from './components/Experience';
 import { Navbar} from './components/Navbar';
+import { Contact } from './components/Contact';
 import { Container} from '@mantine/core';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -21,6 +22,10 @@ function App() {
 
         <section id="Experience">
         <Experience/>
+        </section>
+
+        <section id="Contact">
+        <Contact/>
         </section>
       </Container>
 
